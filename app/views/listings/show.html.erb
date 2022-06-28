@@ -7,7 +7,7 @@
 
 <div>
   <% if @listing.picture.attached? %>
-    <%= image_tag @listing.picture, alt: @listing.title %>
+    <%= image_tag @listing.picture, alt: @listing.Title %>
   <% else %>
     <%= image_tag "https://placekitten.com/200/300", alt: @listing.Title %>
   <% end %>
@@ -43,6 +43,7 @@
   <strong>Category:</strong>
   <%= @listing.category_id %>
 </p>
+
 <% if current_user.id == @listing.user_id %>
   <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <% end %>  
