@@ -5,6 +5,15 @@
   <%= @listing.Title %>
 </p>
 
+<div>
+  <% if @listing.picture.attached? %>
+    <%= image_tag @listing.picture, alt: @listing.title %>
+  <% else %>
+    <%= image_tag "https://placekitten.com/200/300", alt: @listing.Title %>
+  <% end %>
+
+</div>
+
 <p>
   <strong>Description:</strong>
   <%= @listing.description %>
