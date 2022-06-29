@@ -11,10 +11,23 @@
   <% else %>
     <%= image_tag "https://placekitten.com/200/300", alt: @listing.Title %>
   <% end %>
-
 </div>
 
-<%= button_to "Buy", place_order_path %>
+<p> 
+  <strong>Seller:</strong>
+  <%= @listing.user.username.capitalize %>
+</p>
+
+<% if @listing.sold %>
+   <p> Sold out! </p>
+<% elsif current_user && current_user.id == @listing.user_id %>
+    <%= link_to 'Edit', edit_listing_path(@listing) %>
+    <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Are you sure you want to delete this listing?' } %>
+<% elsif current_user %>
+  <%= button_to "Buy", place_order_path %>
+<% else %>
+  <p> Please log in to make this purchase </p>
+<% end %>
 
 <p>
   <strong>Description:</strong>
@@ -28,17 +41,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Sold:</strong>
-  <%= @listing.sold %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
+  $<%= @listing.price %>
 </p>
 
 <p>
@@ -46,10 +49,12 @@
   <%= @listing.category_id %>
 </p>
 
-<% if current_user && current_user.id == @listing.user_id %>
-  <%= link_to 'Edit', edit_listing_path(@listing) %> |
-<% end %>  
-  
-  <%= link_to 'Back', listings_path %> <br></br>
+<% if @listing.sold %>
+   <p> Sold out! </p>
+<% elsif current_user && current_user.id == @listing.user_id %>
+<% elsif current_user %>
+  <%= button_to "Buy", place_order_path %>
+<% else %>
+  <p> Please log in to make this purchase </p>
+<% end %>
 
-<%= button_to "Buy", place_order_path %>

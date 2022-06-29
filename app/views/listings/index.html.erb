@@ -22,9 +22,9 @@
         <td><%= listing.Title %></td>
         <td><%= listing.description %></td>
         <td><%= listing.condition %></td>
-        <td><%= listing.price %></td>
+        <td>$<%= listing.price %></td>
         <td><%= listing.sold %></td>
-        <td><%= listing.user_id %></td>
+        <td><%= listing.user.username.capitalize %></td>
         <td><%= listing.category_id %></td>
         <td><%= link_to 'Show', listing %></td>
 
