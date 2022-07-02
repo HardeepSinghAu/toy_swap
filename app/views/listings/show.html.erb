@@ -36,12 +36,12 @@
 
 <p>
   <strong>Condition:</strong>
-  <%= @listing.condition %>
+  <%= format_condition(@listing.condition.capitalize) %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  $<%= @listing.price %>
+  <%= number_to_currency(@listing.price) %>
 </p>
 
 <p>

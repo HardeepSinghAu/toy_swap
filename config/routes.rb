@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   post "listings/:id/order", to: "listings#place_order", as: "place_order"
-  get 'pages/success', to: "pages#success", as: "order_success"
 end

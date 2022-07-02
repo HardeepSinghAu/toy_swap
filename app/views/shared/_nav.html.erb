@@ -1,5 +1,12 @@
-    <%= link_to '🏠', root_path %>
+    <%= link_to '🏠', root_path, class: "button button-primary" %>
     <%= link_to 'Listings', listings_path, class: "button button-primary" %>
+
+<span>
+    <%= link_to 'Your Orders',  orders_bought_path, class: "button button-primary" %>
+    <%= link_to 'Your Sales', orders_sold_path, class: "button button-primary" %>
+</span>
+
+
 
 <span style = "float: right">
 <% if user_signed_in? %>
