@@ -2,21 +2,33 @@
 
 ### Identification of the problem you are trying to solve by building this particular marketplace app.
 
-Demonstrates a full understanding of the problems that exist in a relevant marketplace that needs disrupting
+Households with children across Australia (I'd go as far as to say worldwide), deal with the problem of being overcluttered by toys. Many that are not utilised as children out grow those toys or as the novelty of the toys wears off. Some are broken or have pieces missing but parents and carers can't bring themselves to bin them as toys have become very costly in 2022.
+
+Toy Trader aims to make to solve the following problems:
+- Allow the user to sell unwated toys whilst making some money
+- Declutter their home without feeling guilty about wastage
+- Sell double ups your child has been gifted
+- Sell broken toys for parts if they are in less than good condition
+- Find toys sold for parts that fix their current toys
+- Buy toys in good to mint condition at more affordable prices
 
 
 ### Why is it a problem that needs solving?
 
+This is a problem that needs solving first for the global problem of reducing the release of carbon emissions from the creation of new toys and also reducing the amount of plastic waste. It's no secret plastic toys are bad for the environment.
+
+Another issue is when a child really wants a toy and recieves it but the novelty wears off very quickly, the buyer might be upset that an expensive toy is now sat at the bottom of a toy box not being played with. 
+
+Children also outgrow toys, what was a great toy one year and helped the child learn new skills is now a boring toy but is still in good condition and can be useful to another child. These toys can be offered on Toy Trader and be valued and appreciated by another child.
+
+Toys can be quite an expensive investment however, Toy Trader is a great source to buy toys in good to mint condition at a more affordable price.
+
 Recycling
-Novelty
 Affordable toys
 
 
-### A link (URL) to your deployed app (i.e. website)
-
-
-### A link to your GitHub repository (repo).
-
+### Access Toy Trader
+[Toy Trader](https://staging-toytrader.herokuapp.com/)
 [Github repo](https://github.com/HardeepSinghAu/toy_swap)
 
 
