@@ -2,10 +2,10 @@
 
 ### Identification of the problem you are trying to solve by building this particular marketplace app.
 
-Households with children across Australia (I'd go as far as to say worldwide), deal with the problem of being overcluttered by toys. Many that are not utilised as children out grow those toys or as the novelty of the toys wears off. Some are broken or have pieces missing but parents and carers can't bring themselves to bin them as toys have become very costly in 2022.
+Households with children across Australia (I'd go as far as to say worldwide), deal with the problem of being overcluttered by toys. Many that are not utilised as children out grow those toys or as the novelty of the toys wears off. Some are broken or have pieces missing but parents and carers can't bring themselves to bin them as toys have become very costly in 2022. On the other hand, parents need educational toys to challenge their kids as they grow or parts of toys to make their current toys whole.
 
-Toy Trader aims to make to solve the following problems:
-- Allow the user to sell unwated toys whilst making some money
+Toy Trader aims to solve the following problems:
+- Allow the user to sell unwanted toys whilst making some money
 - Declutter their home without feeling guilty about wastage
 - Sell double ups your child has been gifted
 - Sell broken toys for parts if they are in less than good condition
@@ -32,14 +32,39 @@ Affordable toys
 [Github repo](https://github.com/HardeepSinghAu/toy_swap)
 
 
-- Ensure the repo is accessible by your Educators
-
 ### Description of your marketplace app (website), including:
 **Purpose**
 
 **Functionality / features**
-**Sitemap**
+
+Toy trader has several features including:
+- A seamless Sign-up and logging in process
+- Product listing
+- Product details page
+- Orders page
+- Sales Page
+
+<br></br>
+![Sitemap](app/assets/images/Toytrader-sitemap.jpg)
+
+
 **Screenshots**
+>![Screenshot of ](app/assets/images/homepagess.png)
+
+>![Screenshot of ](app/assets/images/regpagess.png)
+
+>![Screenshot of ](app/assets/images/Loginpagess.png)
+
+>![Screenshot of ](app/assets/images/Listingsdetailss.png)
+
+>![Screenshot of ](app/assets/images/Listingspagess.png)
+
+>![Screenshot of ](app/assets/images/Successpagess.png )
+
+> ![Screenshot of ](app/assets/images/Yourorderspagess.png )
+
+>![Screenshot of ](app/assets/images/yoursalesss.png )
+
 **Target audience**
 Mums and Dads
 
@@ -62,6 +87,14 @@ As a Dad, I want to sell some toys that still have some good working parts and c
 
 ### Wireframes for your app
 More than five detailed and well designed wireframes provided, for several different screen sizes (as required for the app)
+
+![Wireframe of Homepage](app/assets/images/wf_homepage.png)
+![Wireframe of Registration page](app/assets/images/wf_signup.png)
+![Wireframe of Login page](app/assets/images/wf_login.png)
+![Wireframe of listings page](app/assets/images/wf_mobile_listings.png)
+![Wireframe of Sold items page](app/assets/images/wf_sold.png)
+![Wireframe of Your bought items page](app/assets/images/wf_bought.png)
+
 
 
 
