@@ -28,13 +28,14 @@ Affordable toys
 
 
 ### Access Toy Trader
-[Toy Trader](https://staging-toytrader.herokuapp.com/)
+[Toy Trader](https://staging-toytrader.herokuapp.com/)<br>
 [Github repo](https://github.com/HardeepSinghAu/toy_swap)
 
 
-### Description of your marketplace app (website), including:
+### Description of Toy Trader:
 **Purpose**
 
+A site where Users can connect, as Buyers, Sellors or both to 
 **Functionality / features**
 
 Toy trader has several features including:
@@ -45,10 +46,13 @@ Toy trader has several features including:
 - Sales Page
 
 <br></br>
+
+**Sitemap of Toy Trader**
+
 ![Sitemap](app/assets/images/Toytrader-sitemap.jpg)
 
 
-**Screenshots**
+**Screenshots of Toy Trader site live**
 >![Screenshot of ](app/assets/images/homepagess.png)
 
 >![Screenshot of ](app/assets/images/regpagess.png)
@@ -66,12 +70,29 @@ Toy trader has several features including:
 >![Screenshot of ](app/assets/images/yoursalesss.png )
 
 **Target audience**
-Mums and Dads
 
-**Tech stack** describe the tech stack
-- HTML
-- CSS
-- Ruby on Rails
+Toy trader has a somewhat limited target audience, unlike a marketplace that includes the sales of all kind of products, Toy Trader is solely for toys for kids and that narrows the audience from everyone down to Users who have a child in their life such as:
+- Mums and Dads
+- Carers and Guardians
+- Grandparents, Aunts and Uncles
+- Anyone with a child in their life
+
+The exception to this rule might be adults who love legos but are missing pieces from their sets or might be searching for vintage toys.
+
+**Tech stack**
+
+Toy Trader uses a simple but scalable tech stack which consists of: 
+
+- Front End:
+    - HTML
+    - SCSS/SASS
+    - CSS
+
+- Back End:
+    - Ruby on Rails
+    - PostgreSQL 
+
+For Version control and Deployment:
 - Heroku 
 - Github
 
@@ -79,14 +100,17 @@ Mums and Dads
 
 User stories are well thought out, relevant, and comprehensively cover the needs of the app
 
-As a Mum, I want to get rid of a few excess toys so that I can get rid of clutter and make a bit of change.
+1. As a person with a child, I'm very time poor and I want an app that is quick and easy to sign up, login and list on. 
 
-As a parent, I want to buy some good quality toys, without breaking the bank.
+2. As a Mum, I want to get rid of a few excess toys so that I can get rid of clutter and make a bit of change.
 
-As a Dad, I want to sell some toys that still have some good working parts and can be recycled, because recycling is good for the planet.
+3. As a parent, I want to buy some good quality toys, without breaking the bank.
+
+4. As a Dad, I want to sell some toys that still have some good working parts and can be recycled, because recycling is good for the planet.
+
+5. I want to be able to find affordable educational toys to support my childs learning, he outgrowns educational toys very quickly. I suppose I can sell these on the same app as well.
 
 ### Wireframes for your app
-More than five detailed and well designed wireframes provided, for several different screen sizes (as required for the app)
 
 ![Wireframe of Homepage](app/assets/images/wf_homepage.png)
 ![Wireframe of Registration page](app/assets/images/wf_signup.png)
@@ -94,8 +118,6 @@ More than five detailed and well designed wireframes provided, for several diffe
 ![Wireframe of listings page](app/assets/images/wf_mobile_listings.png)
 ![Wireframe of Sold items page](app/assets/images/wf_sold.png)
 ![Wireframe of Your bought items page](app/assets/images/wf_bought.png)
-
-
 
 
 ###	An ERD for your app
@@ -146,7 +168,101 @@ schema.rb
  Provide your database schema design
 Flawless, complex, complete, and well thought through ERDs provided
 
-###	Describe the way tasks are allocated and tracked in your project
-Trello 
+create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
-Shows significant planning for how tasks are planned and tracked, including a full description of the process and of the tools used
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+ > Categories
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  
+
+  > Listings
+    t.string "Title"
+    t.integer "condition"
+    t.integer "price"
+    t.boolean "sold", default: false
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_listings_on_category_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  
+  > Orders
+    t.bigint "listing_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+    t.index ["seller_id"], name: "index_orders_on_seller_id"
+  end
+
+  > Users
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "username"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+ 
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "listings", "categories"
+  add_foreign_key "listings", "users"
+  add_foreign_key "orders", "listings"
+  add_foreign_key "orders", "users", column: "buyer_id"
+  add_foreign_key "orders", "users", column: "seller_id"
+
+
+###	Describe the way tasks are allocated and tracked in your project
+
+I used Trello to plan the Toy Trader project, starting with a list of essential tasks, a list of optional tasks and a list of additional tasks that weren't essential but would be an added benefit to the project. AS I worked, I added new tasks as they arose and also noted tasks so that they would be in the backlog to complete once the essential needs were met.
+
+![Trello image 2](app/assets/images/Trello2.png)<br></br>
+![Trello image of card](app/assets/images/TrelloCard.png)<br></br>
+![Trello image 3](app/assets/images/Trello3.png)<br></br>
+![Trello image 4](app/assets/images/Trello4.png)<br></br>
+![Trello image 5](app/assets/images/Trello5.png)<br></br>
