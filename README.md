@@ -256,7 +256,7 @@ Lastly there is an Orders table, which has a primary key of order_id, a foreign 
 
 ###	**Describe the way tasks are allocated and tracked in your project**
 
-I used Trello to plan the Toy Trader project, starting with a list of essential tasks, a list of optional tasks and a list of additional tasks that weren't essential but would be an added benefit to the project. AS I worked, I added new tasks as they arose and also noted tasks so that they would be in the backlog to complete once the essential needs were met.
+I used Trello to plan the Toy Trader project, starting with a list of essential tasks, a list of optional tasks and a list of additional tasks that weren't essential but would be an added benefit to the project. AS I worked, I added new tasks as they arose and also noted tasks so that they would be in the backlog to complete once the essential needs were met. As I completed tasks in the sprint backlog, I then moved tasks from the backlog to the sprint backlog in order of priority and requirement.  
 
 ![Trello image 2](app/assets/images/Trello2.png)<br></br>
 ![Trello image of card](app/assets/images/TrelloCard.png)<br></br>
